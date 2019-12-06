@@ -1,0 +1,16 @@
+$(LINUX_ONLY)#!${INSTALL}/bin/${ARCH}/m2ts-control-mk-ioc
+
+cd ${INSTALL}
+
+## Register all support components
+dbLoadDatabase("dbd/m2ts-control-mk-ioc.dbd")
+m2ts_control_mk_ioc_registerRecordDeviceDriver(pdbbase)
+
+## Load record instances
+#dbLoadTemplate("db/m2ts-control-mk-ioc.substitutions")
+#dbLoadRecords("db/m2ts-control-mk-ioc.db", "user=mrippa")
+
+iocInit
+
+## Start any sequence programs
+#seq(sncxxx, "user=mrippa")
